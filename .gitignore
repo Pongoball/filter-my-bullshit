@@ -1,0 +1,6 @@
+# Personal glossary: each user makes their own from glossary.example.md
+glossary.md
+
+# Test runs and personal test cases
+evals/
+*-workspace/

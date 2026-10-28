@@ -29,10 +29,16 @@ Open: Which photo folder?
 - **Fixes** half-sentences and speech-to-text errors.
 - **Translates** words from your own language that you drop in when you can't find the English one ("apelsinas" becomes "orange").
 - **Keeps** every real requirement, number, name and step order, and never adds anything you didn't say. Guesses are marked as guesses.
+- **Respects "just talking"**: if you say "no coding" or "just listening", it only discusses until you say "go ahead".
+- **Answers questions** instead of acting on them: "Can you…?" gets an answer and an offer, not a start.
 - **Acts** right away when everything is clear. If something blocks the work, it asks just that one question and picks sensible defaults for the rest.
 - **Waits** for your yes before anything risky, such as deleting, sending, buying or publishing.
 
+It's built to be light on tokens. A message with just one or two misheard words gets a one-line fix (`🧹 Reading "cloud app" as Claude app.`) without loading the skill. The full summary only shows for long, messy messages.
+
 ## Install
+
+### Claude Code
 
 Clone it into your personal skills folder:
 
@@ -41,6 +47,20 @@ git clone https://github.com/Pongoball/filter-my-bullshit ~/.claude/skills/filte
 ```
 
 Start a new Claude Code session, then type `/filter-my-bullshit` followed by your messy request. Claude also uses it on its own when a message is long and rambling.
+
+### Claude app and claude.ai
+
+Zip the `filter-my-bullshit` folder and upload it under **Settings → Skills**. The Claude Code copy and the uploaded copy don't sync, so re-upload after you change it.
+
+## Make it yours (optional)
+
+Copy `glossary.example.md` to `glossary.md` and add:
+
+- your native language, so words from it get translated
+- words speech-to-text keeps getting wrong for you ("cloud" → "Claude")
+- names of people or projects that get misheard
+
+Claude only opens this file when a word looks off, so it costs nothing on clean messages. When you correct a misheard word, Claude adds it for you.
 
 ## License
 
